@@ -1,0 +1,54 @@
+<!--pages/reg/reghousetorent.wxml-->
+<view>
+<view class='title'>请登记想出租的房源</view>
+  <form>
+    <view class='form-list'>
+      <view class='input-title'>小区名称:</view>
+      <input class='input' name='input' placeholder='请在这里输入'></input>
+    </view>
+    <view class='form-list'>      
+      <view class='input-title'>楼层：</view>
+      <picker class='picker' mode="multiSelector" bindchange='bindMultiPickerChange1' value="{{multiIndex1}}" range="{{multiArray1}}">      
+      <view class='selector-detail'>{{multiArray1[0][multiIndex1[0]]}}/{{multiArray1[1][multiIndex1[1]]}}</view>
+      </picker>
+    </view>
+    <view class='form-list' style='padding-bottom:4rpx'>
+    <view class='input-title'>带电梯：</view>
+      <checkbox class='picker'></checkbox>
+    </view>
+    <view class='form-list'>
+      <view class='input-title'>户型：</view>
+      <picker class='picker' mode="multiSelector" bindchange='bindMultiPickerChange2' value="{{multiIndex2}}" range="{{multiArray2}}">      
+      <view class='selector-detail'>{{multiArray2[0][multiIndex2[0]]}}室{{multiArray2[1][multiIndex2[1]]}}厅{{multiArray2[2][multiIndex2[2]]}}厨{{multiArray2[3][multiIndex2[3]]}}卫</view>
+      </picker>    
+    </view>
+    <view class='form-list'>
+      <view class='input-title'>房屋朝向:</view>
+      <input class='input' name='input' placeholder='南北或者东西'></input>
+    </view>
+    <view class='form-list'>
+      <view class='input-title'>每月租金:</view>
+      <input class='input' name='input' placeholder='单位万元人民币'></input>
+    </view>
+    <view class='form-list'>
+      <view class='input-title'>付款方式:</view>
+      <input class='input' name='input' placeholder='单位万元人民币'></input>
+    </view>
+    <view class='form-list'>
+     <view class='input-title'>装修:</view>
+      <picker bindchange='bindPickerChange' value="{{index}}" range="{{fitlevel}}">
+         <view class='picker'>{{fitlevel[index]}}</view>
+      </picker>
+    </view>
+    <view class='form-list'>
+      <view class='input-title'>描述:</view>
+      <input class='input' name='input' placeholder='请在这里输入'></input>
+    </view>
+    <view class='form-list'>
+      <view class='input-title'>联系手机:</view>
+      <input class='input' name='input' placeholder='请在这里输入'></input>
+    </view>
+    <button class='btn' form-type='submit' type='primary' size='default' loading='false'
+    disabled='false' >提交信息</button>
+  </form>
+</view>

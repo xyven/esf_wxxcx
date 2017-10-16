@@ -1,0 +1,17 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/agentshop/agentshop",              
+    "pages/reg/reghousetolet",
+    "pages/reg/reghousetorent",        
+    "pages/templates/templates",
+    "pages/houseitem/houseitem", 
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#CC3333",
+    "navigationBarTitleText": "房天下合作经纪",
+    "navigationBarTextStyle":"white"
+  }
+}

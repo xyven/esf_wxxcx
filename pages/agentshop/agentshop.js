@@ -1,0 +1,135 @@
+// pages/agentshop/agentshop.js
+const App=getApp()
+var config = require('../../config');
+var parseParam = function (param, key) {
+  var paramStr = "";
+  if (param instanceof String || param instanceof Number || param instanceof Boolean) {
+    paramStr += "&" + key + "=" + encodeURIComponent(param);
+  } else {
+    for(var i in param){
+      paramStr += '&' + i + "=" + param[i];
+    };
+  }
+  return paramStr.substr(1);
+};
+
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    agentid:'',
+    agentname:'',
+    agentphone:'',
+    curpagename:'',
+    lst:[],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 3000,
+    duration: 1000,
+    circular:true,
+    toview:'htl_title'
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    var that = this; 
+    wx.setNavigationBarTitle({
+      title: '房天下合作经纪人：'+ options.name,
+    })
+    wx.request({
+      url: config.service.getFangtolet,
+      data: { 'agentid': options.id }, //options.id  ym19870817
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        //console.log(res)
+        that.setData({
+          lst: res.data,
+          agentid: options.id,
+          agentname: options.name,
+          agentphone: options.telno
+        })
+      },
+      fail: function () {
+        console.log("request fail!")
+      }
+    })  
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+  
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  
+  },
+
+  //点击买房按钮
+  tobuyhouse:function(){
+    var that = this;
+    that.setData({
+      toview:'htl_title'
+    })
+  },
+
+  torenthouse:function(){
+    var that=this;
+    that.setData({
+      toview: 'htr_title'
+    })
+  },
+
+  onhtmitem:function(event){
+    var that = this;
+    var hi = that.data.lst[event.currentTarget.id];
+    wx.navigateTo({
+      url: '../houseitem/houseitem?' + parseParam(hi)
+    })
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {    
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  
+  }
+})

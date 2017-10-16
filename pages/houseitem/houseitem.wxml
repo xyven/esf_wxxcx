@@ -1,0 +1,25 @@
+<!--pages/houseitem/houseitem.wxml-->
+<view>
+  <view class='title'>{{item.title}}</view>
+  <view class='htl-txtinfo'>
+    <view class='htl-t-v'><text class='h-info-t'>小区:</text><text class='h-info-d'>{{item.estate}}</text></view>
+    <view class='htl-t-v'><text class='h-info-t'>楼层:</text><text class='h-info-d'>{{item.floor}}</text></view>
+    <view class='htl-t-v'><text class='h-info-t'>面积:</text><text class='h-info-d'>{{item.area}}</text></view>
+    <view class='htl-t-v'><text class='h-info-t'>户型:</text><text class='h-info-d'>{{item.struct}}</text></view>
+    <view class='htl-t-v'><text class='h-info-t'>朝向:</text><text class='h-info-d'>{{item.director}}</text></view>
+    <view class='htl-t-v'><text class='h-info-t'>装修:</text><text class='h-info-d'>{{item.fitment}}</text></view>
+    <view class='htl-t-v'><text class='h-info-t'>产权:</text><text class='h-info-d'>{{item.changquan}}</text></view>
+    <view class='htl-t-v'><text class='h-info-t'>总价:</text><text class='h-info-d'>{{item.totalprice}}</text></view>
+    <view class='htl-t-v'><text class='h-info-t'>单价:</text><text class='h-info-d'>{{item.unitprice}}</text></view>
+  </view>
+  <view class='img-container'>
+  <image class="img" src="{{item.pic1=='' ? '../icon/housetosale.png':item.pic1}}"></image>
+  <image class="img" src="{{item.pic2=='' ? '../icon/housetosale.png':item.pic2}}"></image>
+  <image class="img" src="{{item.pic3=='' ? '../icon/housetosale.png':item.pic3}}"></image>
+  <image class="img" src="{{item.pic4=='' ? '../icon/housetosale.png':item.pic4}}"></image>
+  </view>
+  <button class="btn-connect" type='primary'>联系经纪人</button>
+  <view class='tabbar'>
+    <button class="css_btn_class" bindtap='toback'>返回</button>
+  </view>
+</view>
