@@ -5,8 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    item:{}
-  
+    item:{},
+    pic:[]
   },
 
   /**
@@ -15,7 +15,8 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      item: options
+      item: options,
+      pic:options.pic.split(',')
     })
     console.log(options);
   },

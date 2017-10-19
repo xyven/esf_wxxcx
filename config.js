@@ -24,7 +24,10 @@ var config = {
         getFangtolet: `https://${host}/Housestolet`,
 
         // 获取经纪人接口
-        getAgents:`https://${host}/Agents`
+        getAgents:`https://${host}/Agents`,
+
+        // 获取所有房源数据（包括租房）
+        getallhouses:`https://${host}/Housesall`
 
             }
 };

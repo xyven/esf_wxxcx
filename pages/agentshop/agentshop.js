@@ -23,7 +23,11 @@ Page({
     agentname:'',
     agentphone:'',
     curpagename:'',
-    lst:[],
+    lstforswiper:[],
+    lstforlet:[],
+    lstforrent:[],
+    numoflet:0,
+    numofrent:0,
     indicatorDots: true,
     autoplay: true,
     interval: 3000,
@@ -41,16 +45,20 @@ Page({
       title: '房天下合作经纪人：'+ options.name,
     })
     wx.request({
-      url: config.service.getFangtolet,
+      url: config.service.getallhouses,
       data: { 'agentid': options.id }, //options.id  ym19870817
       method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        //console.log(res)
+        console.log(res)
         that.setData({
-          lst: res.data,
+          lstforswiper:res.data.housetolet.slice(0,3),
+          lstforlet: res.data.housetolet.slice(3),
+          lstforrent: res.data.housetorent,
+          numoflet: res.data.housetolet.length,
+          numofrent:res.data.housetorent.length,
           agentid: options.id,
           agentname: options.name,
           agentphone: options.telno
@@ -112,9 +120,18 @@ Page({
     })
   },
 
-  onhtmitem:function(event){
+  onhtmletitem:function(event){
     var that = this;
-    var hi = that.data.lst[event.currentTarget.id];
+    console.log(event);
+    var hi = that.data.lstforlet[event.currentTarget.id];
+    wx.navigateTo({
+      url: '../houseitem/houseitem?' + parseParam(hi)
+    })
+  },
+
+  onhtmrentitem: function (event) {
+    var that = this;
+    var hi = that.data.lstforrent[event.currentTarget.id];
     wx.navigateTo({
       url: '../houseitem/houseitem?' + parseParam(hi)
     })
