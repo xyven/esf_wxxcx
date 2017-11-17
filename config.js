@@ -27,9 +27,12 @@ var config = {
         getAgents:`https://${host}/Agents`,
 
         // 获取所有房源数据（包括租房）
-        getallhouses:`https://${host}/Housesall`
+        getallhouses:`https://${host}/Housesall`,
 
-            }
+        //登记新房源
+        regnewhouse: `https://${host}/Reghouse`
+
+        }
 };
 
 module.exports = config;

@@ -1,9 +1,8 @@
 {
-  "pages":[
+  "pages":[    
     "pages/index/index",
-    "pages/agentshop/agentshop",              
-    "pages/reg/reghousetolet",
-    "pages/reg/reghousetorent",        
+    "pages/reg/reg",    
+    "pages/agentshop/agentshop",
     "pages/templates/templates",
     "pages/houseitem/houseitem", 
     "pages/logs/logs"

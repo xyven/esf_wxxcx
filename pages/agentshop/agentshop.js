@@ -120,6 +120,13 @@ Page({
     })
   },
 
+  tosalehouse:function(){
+    var that = this;
+    wx.navigateTo({
+      url: '../reg/reg?agentid=' + that.data.agentid,
+    })
+  },
+
   onhtmletitem:function(event){
     var that = this;
     console.log(event);

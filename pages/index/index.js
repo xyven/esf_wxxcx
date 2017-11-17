@@ -67,7 +67,7 @@ Page({
         'content-type':'application/x-www-form-urlencoded'
       },
       success:function(res){
-        console.log(res)
+        //console.log(res)
         that.setData({
             lst:res.data
             })
