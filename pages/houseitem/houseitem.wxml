@@ -16,7 +16,7 @@
   <view class='img-container' wx:for='{{pic}}' wx:key='{{index}}'>
   <image class="img" src="{{item =='' ? '../icon/housetosale.png':item}}"></image>
   </view>
-  <button class="btn-connect" type='primary'>联系经纪人</button>
+  <button class="btn-connect" type='primary' bindtap='connectagent'>联系经纪人</button>
   <view class='tabbar'>
     <button class="css_btn_class" bindtap='toback'>返回</button>
   </view>

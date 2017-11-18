@@ -1,4 +1,6 @@
 /* pages/reg/reghousetolet.wxss */
+@import "../agentshop/agentshop.wxss";
+
 .title{
    text-align:center;
    padding-top: 16rpx;

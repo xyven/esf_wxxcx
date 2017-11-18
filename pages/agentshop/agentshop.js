@@ -3,7 +3,7 @@ const App=getApp()
 var config = require('../../config');
 var parseParam = function (param, key) {
   var paramStr = "";
-  if (param instanceof String || param instanceof Number || param instanceof Boolean) {
+  if (param instanceof String || param instanceof Number || param instanceof Boolean)   {
     paramStr += "&" + key + "=" + encodeURIComponent(param);
   } else {
     for(var i in param){
@@ -40,7 +40,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this; 
+    var that = this;
+    console.log(options);
     wx.setNavigationBarTitle({
       title: '房天下合作经纪人：'+ options.name,
     })
@@ -154,6 +155,15 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    return {
+      title: this.data.agentname+'的二手房微门店',
+      path: 'pages/agentshop/agentshop?id=' + this.data.agentid + '&name=' + this.data.agentname + '&telno=' + this.data.agentphone,
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 })

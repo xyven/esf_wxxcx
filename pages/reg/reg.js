@@ -135,6 +135,11 @@ Page({
     })
   },
 
+  toback: function () {
+    wx.navigateBack({
+    })
+  },
+
   onreg:function(e){
     var formData = e.detail.value;
     console.log(formData);
@@ -147,7 +152,18 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(res.data)
+        wx.showToast({
+          title: '登记成功',
+          icon: 'success',
+          duration: 2000
+        })        
+      },
+      fail:function(res){
+        wx.showToast({
+          title: '登记失败，可能是网络原因',
+          icon: 'success',
+          duration: 2000
+        })        
       }
     }) 
   }

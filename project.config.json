@@ -9,11 +9,18 @@
 	"compileType": "weapp",
 	"libVersion": "1.5.4",
 	"appid": "wx91704bed6d3fdfac",
-	"projectname": "wx-fang01-appid",
+	"projectname": "esf-wxxcx",
 	"condition": {
 		"weapp": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "房源页面",
+					"pathName": "pages/agentshop/agentshop",
+					"query": "id=qzhffc&name=徐向前&telno=15906703217"
+				}
+			]
 		},
 		"search": {
 			"current": -1,
